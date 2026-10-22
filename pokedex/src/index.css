@@ -1,0 +1,17 @@
+@import-normalize;
+
+
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, p, h3 {
+    margin: 0;
+}
