@@ -1,15 +1,16 @@
 import { NavLink } from "react-router-dom";
 import { FaMoon } from "react-icons/fa";
+import pokedexLogo from "../../assets/pokedex-logo.webp"; 
 import style from "../Header/Header.module.css";
 
 export default function Header() {
   return (
     <header className={style.Header}>
-      <div className={style.header__container}>
+      <div className={style.container}>
         <NavLink to="/" className={style.header__link}>
-          <img src="/logo.svg" alt="logo" className={style.header__logo} />
+          <img src="./icons.svg" alt="logo" className={style.header__logo} />
           <img
-            src="/pokedex-logo.svg"
+            src={pokedexLogo}
             alt="logo"
             className={style.header__logo__text}
           />

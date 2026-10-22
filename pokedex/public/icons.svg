@@ -1,41 +1,28 @@
+<svg id="pokeballSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-full h-full">
+          <!-- External Outer Black Stroke / Shell -->
+          <circle cx="50" cy="50" r="44" fill="none" stroke="#111827" stroke-width="8"></circle>
 
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-  <defs>
-    <linearGradient id="red" x1="0" y1="0" x2="0.25" y2="1">
-      <stop offset="0" stop-color="#ff454b"/>
-      <stop offset="1" stop-color="#e60026"/>
-    </linearGradient>
-    <linearGradient id="white" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#ffffff"/>
-      <stop offset="1" stop-color="#e8e8f0"/>
-    </linearGradient>
-    <clipPath id="ballClip">
-      <circle cx="256" cy="256" r="190"/>
-    </clipPath>
-  </defs>
+          <!-- Top Red Half -->
+          <path d="M 6,50 A 44,44 0 0,1 94,50 Z" fill="#EF4444"></path>
 
-  <g stroke="#17171d" stroke-width="12" stroke-linejoin="round">
-    <circle cx="256" cy="256" r="190" fill="url(#white)"/>
+          <!-- Bottom White Half -->
+          <path d="M 6,50 A 44,44 0 0,0 94,50 Z" fill="#FFFFFF"></path>
 
-    <g clip-path="url(#ballClip)">
-      <path d="M55 58H457V256H55Z"
-            fill="url(#red)" stroke="none"/>
-      <path d="M55 256H457"
-            fill="none" stroke="#17171d" stroke-width="32"/>
-      <path d="M90 91Q145 48 199 68"
-            fill="none" stroke="#ff9297"
-            stroke-width="12" stroke-linecap="round"/>
-    </g>
+          <!-- Top Red Shadow Overlay (Volume) -->
+          <path d="M 12,32 A 44,44 0 0,1 88,32 A 44,44 0 0,0 12,32 Z" fill="#DC2626" opacity="0.3"></path>
 
-    <circle cx="256" cy="256" r="190" fill="none"/>
+          <!-- Bottom White Shadow Overlay -->
+          <path d="M 88,50 A 44,44 0 0,1 64,90 A 44,44 0 0,0 88,50 Z" fill="#E2E8F0"></path>
 
-    <circle cx="256" cy="256" r="57"
-            fill="#17171d" stroke="#17171d" stroke-width="10"/>
+          <!-- Center Horizontal Line Splitter -->
+          <line x1="6" y1="50" x2="94" y2="50" stroke="#111827" stroke-width="8" stroke-linecap="round"></line>
 
-    <circle cx="256" cy="256" r="35"
-            fill="url(#white)" stroke="#17171d" stroke-width="8"/>
+          <!-- Center Button Outer Ring -->
+          <circle cx="50" cy="50" r="14" fill="#111827"></circle>
 
-    <circle cx="245" cy="244" r="7"
-            fill="#ffffff" stroke="none"/>
-  </g>
-</svg>
+          <!-- Center Button White Inner Circle -->
+          <circle cx="50" cy="50" r="8" fill="#FFFFFF"></circle>
+
+          <!-- Inner Button Highlight -->
+          <circle cx="48" cy="48" r="3" fill="#F8FAFC"></circle>
+        </svg>

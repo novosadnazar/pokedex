@@ -1,27 +1,160 @@
+/* ==========================================
+   1. МОБІЛЬНА ВЕРСІЯ (Базові стилі від 380px)
+   ========================================== */
 
-.navLink {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  color: #64748b;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-  transition: color 0.2s ease;
-}
-
-.navLink:hover,
-.active {
-  color: #2878f0;
-}
-
-.navLink.active::after {
-  content: "";
-  position: absolute;
-  bottom: -28px;
-  left: 0;
+.Header {
   width: 100%;
-  height: 3px;
-  border-radius: 3px 3px 0 0;
-  background: #2878f0;
+  color: #ffffff;
+  padding: 12px 16px; /* Компактніші відступи для телефону */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  min-width: 380px; /* Мінімальна межа для мобільних */
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.header__link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.header__logo {
+  width: 28px;
+  height: 28px;
+}
+
+@keyframes pulseLogo {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.header__logo__text {
+  height: 40px; /* Зменшений логотип для мобільного */
+  width: auto;
+  font-family: "Poppins", sans-serif;
+  animation: pulseLogo 2.5s ease-in-out infinite;
+}
+
+/* На мобільці десктопна навігація прихована (або керується через бургер) */
+.header__nav {
+  display: none;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header__icon {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.header__icon:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.header__user {
+  width: 32px;
+  height: 32px;
+  background-color: #3b82f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+
+/* ==========================================
+   2. ДЕСКТОПНА ВЕРСІЯ (Медіа-запит від 1280px)
+   ========================================== */
+
+@media screen and (min-width: 1280px) {
+  .Header {
+    padding: 16px 24px; /* Повертаємо оригінальні десктопні відступи */
+  }
+
+  .container {
+    max-width: 1280px; /* Фіксуємо максимальну ширину контейнера */
+  }
+
+  .header__logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .header__logo__text {
+    height: 55px; /* Повертаємо оригінальний розмір логотипа */
+  }
+
+  /* Розгортаємо повноцінну навігацію для десктопа */
+  .header__nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .navLink {
+    color: #b0b0c0;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
+    transition: color 0.2s ease;
+  }
+
+  .navLink:hover {
+    color: #ffffff;
+  }
+
+  .navLink.active {
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  .header__actions {
+    gap: 16px;
+  }
+
+  .header__icon {
+    font-size: 18px;
+    padding: 8px;
+  }
+
+  .header__user {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
 }

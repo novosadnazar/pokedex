@@ -1,5 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 360" class="w-full h-auto select-none" id="pokedexLogoSvg">
+
+
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 360" class="w-full h-auto select-none" id="pokedexLogoSvg">
           <defs>
+            <!-- Вбудований шрифт Pokemon Solid -->
+            <style>
+              @font-face {
+                font-family: 'Pokemon Solid';
+                src: none format('woff');
+                font-weight: 900;
+                font-style: normal;
+              }
+
+              .logo-text {
+                font-family: 'Pokemon Solid', 'Arial Black', sans-serif;
+                font-weight: 900;
+                text-anchor: middle;
+                dominant-baseline: central;
+              }
+            </style>
+
             <!-- Yellow Gradient for Main Text Fill -->
             <linearGradient id="yellowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
               <stop offset="0%" stop-color="#FFDE00"></stop>
@@ -23,16 +43,6 @@
             <filter id="shadowFilter" x="-10%" y="-10%" width="120%" height="120%">
               <feDropShadow dx="0" dy="10" stdDeviation="6" flood-color="#0A1833" flood-opacity="0.5"></feDropShadow>
             </filter>
-
-            <style>
-              @import url('https://fonts.cdnfonts.com/css/pokemon-solid');
-              .logo-text {
-                font-family: 'Pokemon Solid', 'Arial Black', sans-serif;
-                font-weight: 900;
-                text-anchor: middle;
-                dominant-baseline: central;
-              }
-            </style>
           </defs>
 
           <g filter="url(#shadowFilter)">
@@ -66,15 +76,6 @@
 
             <!-- 6. Accent Top Light Highlight Effect -->
             <text x="515" y="173" class="logo-text" font-size="180" fill="none" stroke="#FFF799" stroke-width="3" stroke-linejoin="round" opacity="0.8">Pokédex</text>
-
-            <!-- Custom Accents: Inner Blue Circles on O, e, and d for authentic Pokémon style look -->
-            <!-- O Circle Cutout Overlay -->
-            <circle cx="342" cy="188" r="14" fill="#2A68D7"></circle>
-            <circle cx="342" cy="188" r="7" fill="url(#yellowGrad)"></circle>
-
-            <!-- e Circle Cutout Overlay -->
-            <circle cx="688" cy="188" r="12" fill="#2A68D7"></circle>
-            <circle cx="688" cy="188" r="6" fill="url(#yellowGrad)"></circle>
 
           </g>
         </svg>
