@@ -1,34 +1,33 @@
-/* =========================================
-   ОСНОВНІ СТИЛІ — MOBILE FIRST
-========================================= */
+
 
 .Header {
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
-  padding: 12px;
+  padding: 30px 0px 300px;
   box-sizing: border-box;
-  background-image: url("../../assets/hero-fon-day-theme.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  color: #ffffff;
   font-family: "Inter", sans-serif;
+  transition: background-image 0.3s ease; 
 }
 
-/* =========================================
-   HEADER / НАВІГАЦІЯ
-========================================= */
+.HeaderDay {
+  background-image: url("../../assets/hero-fon-day-theme.jpeg");
+}
 
-.container {
+.HeaderNight {
+  background-image: url("../../assets/hero-fon-night-theme.jpeg");
+}
+
+.header__top {
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto 28px;
-  padding: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+  margin-bottom: 28px;
   box-sizing: border-box;
 }
 
@@ -96,20 +95,14 @@
   background-color: rgba(255, 255, 255, 0.15);
 }
 
-/* =========================================
-   HERO — MOBILE
-========================================= */
-
 .Hero {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 22px;
+gap: 60px;
   width: 100%;
-  max-width: 1280px;
   min-width: 0;
-  margin: 0 auto;
   box-sizing: border-box;
 }
 
@@ -152,38 +145,19 @@
   line-height: 1.5;
 }
 
-/* Мобільний Пікачу (згори за замовчуванням або можна налаштувати) */
-.hero__character {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-width: 0;
-}
-
 .hero__pikachu {
-  display: block;
-  width: min(48%, 190px);
-  height: auto;
-  max-height: 200px;
-  object-fit: contain;
-  object-position: center;
+  display: none;
 }
-
-/* =========================================
-   ПОШУК — MOBILE
-========================================= */
 
 .searchBar {
   display: flex;
-  flex-direction: column;
+margin-top: 30px;
   align-items: stretch;
   gap: 8px;
   width: 100%;
   max-width: 850px;
-  min-width: 0;
   margin: 0 auto;
-  padding: 10px;
+  padding: 4px;
   box-sizing: border-box;
   background: #ffffff;
   border: 1px solid #dce8fa;
@@ -212,18 +186,13 @@
 }
 
 .searchBar__input {
-  display: block;
-  flex: 1;
   width: 100%;
-  min-width: 0;
-  height: 42px;
-  padding: 0;
   box-sizing: border-box;
   color: #1f2937;
   background: transparent;
   border: none;
   outline: none;
-  font-family: inherit;
+  font-family: "Inter", sans-serif;
   font-size: 13px;
   text-align: left;
 }
@@ -231,45 +200,6 @@
 .searchBar__input::placeholder {
   color: #8a9bb5;
   opacity: 1;
-}
-
-.searchBar__filterGroup {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: 100%;
-  min-width: 0;
-  padding: 8px 8px 0;
-  box-sizing: border-box;
-  border-top: 1px solid #e5edf8;
-}
-
-.searchBar__filterIcon {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  color: #31547f;
-  font-size: 14px;
-}
-
-.searchBar__select {
-  flex: 1;
-  width: 100%;
-  min-width: 0;
-  height: 34px;
-  color: #244875;
-  background: transparent;
-  border: none;
-  outline: none;
-  font-family: inherit;
-  font-size: 13px;
-  cursor: pointer;
-}
-
-.searchBar__arrow {
-  flex-shrink: 0;
-  color: #60799e;
-  font-size: 11px;
 }
 
 .searchBar__button {
@@ -299,16 +229,18 @@
   transform: scale(0.96);
 }
 
-/* =========================================
-   DESKTOP — ВІД 1024px
-========================================= */
+
 
 @media screen and (min-width: 1024px) {
   .Header {
-    padding: 16px 24px 40px;
+    padding: 50px 0 400px;
   }
 
   .container {
+    padding: 0 24px;
+  }
+
+  .header__top {
     min-height: 52px;
     margin-bottom: 40px;
     gap: 24px;
@@ -404,9 +336,10 @@
     align-items: center;
     align-self: flex-start;
     width: 100%;
-    max-width: 950px;
+    max-width: 850px;
     min-height: 56px;
     padding: 6px;
+    margin-top: 130px;
     border-radius: 14px;
     position: relative;
     overflow: visible;
@@ -423,19 +356,6 @@
     font-size: 14px;
   }
 
-  .searchBar__filterGroup {
-    flex: 0 0 150px;
-    width: 150px;
-    padding: 0 12px;
-    border-top: none;
-    border-left: 1px solid #e5edf8;
-  }
-
-  .searchBar__select {
-    height: 42px;
-    font-size: 13px;
-  }
-
   .searchBar__button {
     align-self: center;
     width: 46px;
@@ -444,40 +364,13 @@
     border-radius: 10px;
   }
 
-  /* Стилізація Пікачу біля пошуку */
-  .hero__character {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    flex-shrink: 0;
-    width: auto;
-    margin-left: 10px;
-  }
-
   .hero__pikachu {
-    width: 125px;
-    max-width: none;
-    max-height: none;
+    display: block;
+    width: 130px;
     height: auto;
-    transform: translateY(
-      -28px
-    ); /* Піднімає Пікачу вгору, щоб він красиво сидів на рядку */
-    object-position: bottom;
-  }
-}
-
-/* =========================================
-   ДОСТУПНІСТЬ
-========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-  .header__logo__text {
-    animation: none;
-  }
-
-  .header__icon,
-  .searchBar__button,
-  .navLink {
-    transition: none;
+    position: absolute;
+    right: -110px;
+    bottom: -10px;
+    z-index: 2;
   }
 }

@@ -1,4 +1,13 @@
 @import-normalize;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body{
+      margin: 0px;
+}
 
 ul {
   list-style: none;
@@ -17,14 +26,13 @@ h3 {
   margin: 0;
 }
 
-container {
+.container {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+
+
   box-sizing: border-box;
 }
 
