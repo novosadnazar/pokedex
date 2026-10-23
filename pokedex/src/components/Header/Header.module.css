@@ -1,57 +1,69 @@
-
-
+/* =========================================
+   ОСНОВНІ СТИЛІ — MOBILE FIRST
+========================================= */
 
 .Header {
   width: 100%;
-  color: #ffffff;
-  padding: 12px 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  font-family: "Inter", sans-serif;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 12px;
   box-sizing: border-box;
+  background-image: url("../../assets/hero-fon-day-theme.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
 }
+
+/* =========================================
+   HEADER / НАВІГАЦІЯ
+========================================= */
 
 .container {
   width: 100%;
-  min-width: 380px; 
-  max-width: 100%;
-  margin: 0 auto;
+  max-width: 1280px;
+  margin: 0 auto 28px;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
   box-sizing: border-box;
 }
 
 .header__link {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  flex-shrink: 0;
   text-decoration: none;
 }
 
 .header__logo {
-  width: 28px;
-  height: 28px;
-}
-
-@keyframes pulseLogo {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.08);
-  }
-  100% {
-    transform: scale(1);
-  }
+  display: block;
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
 }
 
 .header__logo__text {
-  height: 40px; 
-  width: auto;
-  font-family: "Poppins", sans-serif;
+  display: block;
+  width: 72px;
+  height: auto;
+  object-fit: contain;
   animation: pulseLogo 2.5s ease-in-out infinite;
 }
 
+@keyframes pulseLogo {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
 
 .header__nav {
   display: none;
@@ -60,98 +72,412 @@
 .header__actions {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: flex-end;
+  flex-shrink: 0;
 }
 
 .header__icon {
-  background: none;
-  border: none;
-  color: #ffffff;
-  font-size: 16px;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  color: #ffffff;
+  background: transparent;
+  border: none;
   border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
   transition: background-color 0.2s ease;
 }
 
 .header__icon:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
-.header__user {
-  width: 32px;
-  height: 32px;
-  background-color: #3b82f6;
-  border-radius: 50%;
+/* =========================================
+   HERO — MOBILE
+========================================= */
+
+.Hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  width: 100%;
+  max-width: 1280px;
+  min-width: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.hero__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.hero__text {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 550px;
+  min-width: 0;
+}
+
+.hero__title {
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(30px, 8vw, 38px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.7px;
+  overflow-wrap: break-word;
+}
+
+.hero__subtitle {
+  max-width: 360px;
+  margin: 0 auto;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Мобільний Пікачу (згори за замовчуванням або можна налаштувати) */
+.hero__character {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  width: 100%;
+  min-width: 0;
+}
+
+.hero__pikachu {
+  display: block;
+  width: min(48%, 190px);
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* =========================================
+   ПОШУК — MOBILE
+========================================= */
+
+.searchBar {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
+  max-width: 850px;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #dce8fa;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0, 25, 75, 0.12);
+}
+
+.searchBar__inputGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
+.searchBar__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #5879a8;
+  font-size: 17px;
+}
+
+.searchBar__input {
+  display: block;
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  height: 42px;
+  padding: 0;
+  box-sizing: border-box;
+  color: #1f2937;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 13px;
+  text-align: left;
+}
+
+.searchBar__input::placeholder {
+  color: #8a9bb5;
+  opacity: 1;
+}
+
+.searchBar__filterGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+  padding: 8px 8px 0;
+  box-sizing: border-box;
+  border-top: 1px solid #e5edf8;
+}
+
+.searchBar__filterIcon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: #31547f;
   font-size: 14px;
+}
+
+.searchBar__select {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  height: 34px;
+  color: #244875;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 13px;
   cursor: pointer;
 }
 
+.searchBar__arrow {
+  flex-shrink: 0;
+  color: #60799e;
+  font-size: 11px;
+}
 
+.searchBar__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  background: #1675f9;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
 
+.searchBar__button:hover {
+  background-color: #075fdb;
+}
 
-@media screen and (min-width: 1280px) {
+.searchBar__button:active {
+  transform: scale(0.96);
+}
+
+/* =========================================
+   DESKTOP — ВІД 1024px
+========================================= */
+
+@media screen and (min-width: 1024px) {
   .Header {
-    padding: 16px 24px;
+    padding: 16px 24px 40px;
   }
 
   .container {
-    max-width: 1280px; 
+    min-height: 52px;
+    margin-bottom: 40px;
+    gap: 24px;
+  }
+
+  .header__link {
+    gap: 8px;
   }
 
   .header__logo {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
   }
 
   .header__logo__text {
-    height: 55px; 
+    width: 88px;
   }
-
 
   .header__nav {
     display: flex;
     align-items: center;
-    gap: 32px;
+    align-self: stretch;
+    gap: 28px;
   }
 
   .navLink {
-    color: #b0b0c0;
-    text-decoration: none;
-    font-size: 16px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #dbe8ff;
+    font-size: 14px;
     font-weight: 500;
-    font-family: "Inter", sans-serif;
+    text-decoration: none;
+    white-space: nowrap;
     transition: color 0.2s ease;
   }
 
-  .navLink:hover {
-    color: #ffffff;
-  }
-
+  .navLink:hover,
   .navLink.active {
     color: #ffffff;
-    font-weight: 700;
   }
 
-  .header__actions {
-    gap: 16px;
+  .navLink.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #ffffff;
+    border-radius: 3px;
   }
 
   .header__icon {
-    font-size: 18px;
-    padding: 8px;
-  }
-
-  .header__user {
     width: 36px;
     height: 36px;
+    font-size: 17px;
+  }
+
+  .Hero {
+    align-items: stretch;
+    gap: 26px;
+  }
+
+  .hero__content {
+    min-height: auto;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .hero__text {
+    flex: 1 1 100%;
+    max-width: 600px;
+  }
+
+  .hero__title {
+    max-width: 600px;
+    margin-bottom: 16px;
+    font-size: clamp(44px, 4.3vw, 58px);
+    line-height: 1.02;
+    letter-spacing: -1.2px;
+  }
+
+  .hero__subtitle {
+    max-width: 470px;
+    margin: 0;
     font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .searchBar {
+    flex-direction: row;
+    align-items: center;
+    align-self: flex-start;
+    width: 100%;
+    max-width: 950px;
+    min-height: 56px;
+    padding: 6px;
+    border-radius: 14px;
+    position: relative;
+    overflow: visible;
+  }
+
+  .searchBar__inputGroup {
+    flex: 1 1 auto;
+    width: auto;
+    padding: 0 14px;
+  }
+
+  .searchBar__input {
+    height: 44px;
+    font-size: 14px;
+  }
+
+  .searchBar__filterGroup {
+    flex: 0 0 150px;
+    width: 150px;
+    padding: 0 12px;
+    border-top: none;
+    border-left: 1px solid #e5edf8;
+  }
+
+  .searchBar__select {
+    height: 42px;
+    font-size: 13px;
+  }
+
+  .searchBar__button {
+    align-self: center;
+    width: 46px;
+    height: 46px;
+    margin: 0 6px;
+    border-radius: 10px;
+  }
+
+  /* Стилізація Пікачу біля пошуку */
+  .hero__character {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-shrink: 0;
+    width: auto;
+    margin-left: 10px;
+  }
+
+  .hero__pikachu {
+    width: 125px;
+    max-width: none;
+    max-height: none;
+    height: auto;
+    transform: translateY(
+      -28px
+    ); /* Піднімає Пікачу вгору, щоб він красиво сидів на рядку */
+    object-position: bottom;
+  }
+}
+
+/* =========================================
+   ДОСТУПНІСТЬ
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .header__logo__text {
+    animation: none;
+  }
+
+  .header__icon,
+  .searchBar__button,
+  .navLink {
+    transition: none;
   }
 }
