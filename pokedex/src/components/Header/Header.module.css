@@ -1,11 +1,10 @@
-/* ==========================================
-   1. МОБІЛЬНА ВЕРСІЯ (Базові стилі від 380px)
-   ========================================== */
+
+
 
 .Header {
   width: 100%;
   color: #ffffff;
-  padding: 12px 16px; /* Компактніші відступи для телефону */
+  padding: 12px 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   font-family: "Inter", sans-serif;
   box-sizing: border-box;
@@ -13,7 +12,7 @@
 
 .container {
   width: 100%;
-  min-width: 380px; /* Мінімальна межа для мобільних */
+  min-width: 380px; 
   max-width: 100%;
   margin: 0 auto;
   display: flex;
@@ -47,13 +46,13 @@
 }
 
 .header__logo__text {
-  height: 40px; /* Зменшений логотип для мобільного */
+  height: 40px; 
   width: auto;
   font-family: "Poppins", sans-serif;
   animation: pulseLogo 2.5s ease-in-out infinite;
 }
 
-/* На мобільці десктопна навігація прихована (або керується через бургер) */
+
 .header__nav {
   display: none;
 }
@@ -96,17 +95,15 @@
 }
 
 
-/* ==========================================
-   2. ДЕСКТОПНА ВЕРСІЯ (Медіа-запит від 1280px)
-   ========================================== */
+
 
 @media screen and (min-width: 1280px) {
   .Header {
-    padding: 16px 24px; /* Повертаємо оригінальні десктопні відступи */
+    padding: 16px 24px;
   }
 
   .container {
-    max-width: 1280px; /* Фіксуємо максимальну ширину контейнера */
+    max-width: 1280px; 
   }
 
   .header__logo {
@@ -115,10 +112,10 @@
   }
 
   .header__logo__text {
-    height: 55px; /* Повертаємо оригінальний розмір логотипа */
+    height: 55px; 
   }
 
-  /* Розгортаємо повноцінну навігацію для десктопа */
+
   .header__nav {
     display: flex;
     align-items: center;
