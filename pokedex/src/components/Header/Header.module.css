@@ -1,5 +1,3 @@
-
-
 .Header {
   width: 100%;
   max-width: 100%;
@@ -10,7 +8,7 @@
   background-size: cover;
   background-position: center;
   font-family: "Inter", sans-serif;
-  transition: background-image 0.3s ease; 
+  transition: background-image 0.3s ease;
 }
 
 .HeaderDay {
@@ -100,7 +98,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-gap: 60px;
+  gap: 60px;
   width: 100%;
   min-width: 0;
   box-sizing: border-box;
@@ -146,12 +144,21 @@ gap: 60px;
 }
 
 .hero__pikachu {
-  display: none;
+  position: absolute;
+  top: 125px;
+  right: 0;
+  width: 130px;
+}
+
+@media (min-width: 518px) {
+  .hero__pikachu {
+    top: 80px;
+  }
 }
 
 .searchBar {
   display: flex;
-margin-top: 30px;
+  margin-top: 30px;
   align-items: stretch;
   gap: 8px;
   width: 100%;
@@ -228,8 +235,6 @@ margin-top: 30px;
 .searchBar__button:active {
   transform: scale(0.96);
 }
-
-
 
 @media screen and (min-width: 1024px) {
   .Header {
@@ -366,11 +371,11 @@ margin-top: 30px;
 
   .hero__pikachu {
     display: block;
-    width: 130px;
+    width: 230px;
     height: auto;
     position: absolute;
-    right: -110px;
-    bottom: -10px;
+    right: 30px;
+    top: -130px;
     z-index: 2;
   }
 }
