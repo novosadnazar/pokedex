@@ -1,4 +1,4 @@
-.Header {
+/* .Header {
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
@@ -378,4 +378,542 @@
     top: -130px;
     z-index: 2;
   }
+} */
+
+
+.Header {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 30px 0px 300px;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: "Inter", sans-serif;
+  transition: background-image 0.3s ease;
+}
+
+.HeaderDay {
+  background-image: url("../../assets/hero-fon-day-theme.jpeg");
+}
+
+.HeaderNight {
+  background-image: url("../../assets/hero-fon-night-theme.jpeg");
+}
+
+.header__top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 28px;
+  box-sizing: border-box;
+}
+
+.header__link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.header__logo {
+  display: block;
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.header__logo__text {
+  display: block;
+  width: 72px;
+  height: auto;
+  object-fit: contain;
+  animation: pulseLogo 2.5s ease-in-out infinite;
+}
+
+@keyframes pulseLogo {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+.header__nav {
+  display: none;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.header__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  color: #ffffff;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.header__icon:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* === Стилі для випадаючого меню мов (Language Dropdown) === */
+
+.langDropdown {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+}
+
+.langButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 10px;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.langButton:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.langIcon {
+  font-size: 15px;
+  color: #ef4444;
+}
+
+.langCode {
+  text-transform: uppercase;
+}
+
+.langArrow {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s ease;
+  opacity: 0.8;
+}
+
+.langArrowOpen {
+  transform: rotate(180deg);
+}
+
+.langMenu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  width: 130px;
+  background-color: #111827;
+  border: 1px solid #374151;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+  padding: 4px 0;
+  z-index: 100;
+  animation: fadeInMenu 0.15s ease-in-out;
+}
+
+@keyframes fadeInMenu {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.langOption {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: #d1d5db;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.langOption:hover {
+  background-color: #1f2937;
+  color: #ffffff;
+}
+
+.langOptionActive {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  font-weight: 600;
+}
+
+/* ========================================================= */
+
+.Hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.hero__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.hero__text {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 550px;
+  min-width: 0;
+}
+
+.hero__title {
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(30px, 8vw, 38px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.7px;
+  overflow-wrap: break-word;
+}
+
+.hero__subtitle {
+  max-width: 360px;
+  margin: 0 auto;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.hero__pikachu {
+  position: absolute;
+  top: 125px;
+  right: 0;
+  width: 130px;
+}
+
+@media (min-width: 518px) {
+  .hero__pikachu {
+    top: 80px;
+  }
+}
+
+.searchBar {
+  display: flex;
+  margin-top: 30px;
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 4px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #dce8fa;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0, 25, 75, 0.12);
+}
+
+.searchBar__inputGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
+.searchBar__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #5879a8;
+  font-size: 17px;
+}
+
+.searchBar__input {
+  width: 100%;
+  box-sizing: border-box;
+  color: #1f2937;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  text-align: left;
+}
+
+.searchBar__input::placeholder {
+  color: #8a9bb5;
+  opacity: 1;
+}
+
+.searchBar__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  background: #1675f9;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.searchBar__button:hover {
+  background-color: #075fdb;
+}
+
+.searchBar__button:active {
+  transform: scale(0.96);
+}
+
+@media screen and (min-width: 1024px) {
+  .Header {
+    padding: 50px 0 400px;
+  }
+
+  .container {
+    padding: 0 24px;
+  }
+
+  .header__top {
+    min-height: 52px;
+    margin-bottom: 40px;
+    gap: 24px;
+  }
+
+  .header__link {
+    gap: 8px;
+  }
+
+  .header__logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .header__logo__text {
+    width: 88px;
+  }
+
+  .header__nav {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    gap: 28px;
+  }
+
+  .navLink {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #dbe8ff;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+  }
+
+  .navLink:hover,
+  .navLink.active {
+    color: #ffffff;
+  }
+
+  .navLink.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #ffffff;
+    border-radius: 3px;
+  }
+
+  .header__icon {
+    width: 36px;
+    height: 36px;
+    font-size: 17px;
+  }
+
+  /* Адаптив для десктопу під меню мов */
+  .langButton {
+    height: 36px;
+    padding: 0 12px;
+    font-size: 14px;
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .langIcon {
+    font-size: 17px;
+  }
+
+  .langArrow {
+    width: 16px;
+    height: 16px;
+  }
+
+  .langMenu {
+    width: 145px;
+  }
+
+  .langOption {
+    padding: 9px 14px;
+    font-size: 14px;
+  }
+
+  .Hero {
+    align-items: stretch;
+    gap: 26px;
+  }
+
+  .hero__content {
+    min-height: auto;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .hero__text {
+    flex: 1 1 100%;
+    max-width: 600px;
+  }
+
+  .hero__title {
+    max-width: 600px;
+    margin-bottom: 16px;
+    font-size: clamp(44px, 4.3vw, 58px);
+    line-height: 1.02;
+    letter-spacing: -1.2px;
+  }
+
+  .hero__subtitle {
+    max-width: 470px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .searchBar {
+    flex-direction: row;
+    align-items: center;
+    align-self: flex-start;
+    width: 100%;
+    max-width: 850px;
+    min-height: 56px;
+    padding: 6px;
+    margin-top: 130px;
+    border-radius: 14px;
+    position: relative;
+    overflow: visible;
+  }
+
+  .searchBar__inputGroup {
+    flex: 1 1 auto;
+    width: auto;
+    padding: 0 14px;
+  }
+
+  .searchBar__input {
+    height: 44px;
+    font-size: 14px;
+  }
+
+  .searchBar__button {
+    align-self: center;
+    width: 46px;
+    height: 46px;
+    margin: 0 6px;
+    border-radius: 10px;
+  }
+
+  .hero__pikachu {
+    display: block;
+    width: 230px;
+    height: auto;
+    position: absolute;
+    right: 30px;
+    top: -130px;
+    z-index: 2;
+  }
+}
+
+
+
+.authButtonText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0 14px;
+  color: #ffffff;
+  background: rgba(22, 117, 249, 0.85);
+  border: none;
+  border-radius: 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.authButtonText:hover {
+  background-color: #075fdb;
 }

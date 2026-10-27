@@ -1,0 +1,124 @@
+.backdrop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+
+.modal {
+
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px; 
+  
+  
+  position: relative; 
+  
+
+  width: 100%;
+  max-width: 450px; 
+  margin: 0 20px;   
+  
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  
+ 
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+
+@keyframes modalFadeIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modalTitle{
+  color: #000;
+  font-family: "Inter", sans-serif;
+font-size: 20px;
+font-weight: 500;
+line-height: normal;
+display: flex;
+justify-content: center;
+margin-bottom: 17px;
+}
+
+.modalLabel{
+  color: #000;
+  font-family: "Inter", sans-serif;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+display: flex;
+flex-direction: column;
+margin-top: 30px;
+}
+
+
+.modalInput{
+    padding-top: 12px;
+    padding-bottom: 13px;
+    padding-left: 20px;
+    display: flex;
+    outline: none;
+  border-radius: 10px;
+background: #E4E4E4;
+outline: none;
+border: none;
+margin-top: 15px;
+
+}
+
+.modalBtn {
+padding: 10px 30px;
+justify-content: center;
+align-items: center;
+height: 36px;
+  padding: 0 14px;
+  color: #ffffff;
+  background: rgba(22, 117, 249, 0.85);
+  border: none;
+  border-radius: 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+margin: 0 auto; 
+display: flex;
+margin-top: 25px;
+}
+
+.modalBtn:hover {
+  background-color: #075fdb;
+
+}
+
+.modalText{
+  color: #000;
+  font-family: "Inter", sans-serif;
+font-size: 8px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 17px;
+}
