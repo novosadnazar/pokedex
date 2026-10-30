@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { FaMoon, FaSun, FaUser } from "react-icons/fa";
 import { HiLanguage } from "react-icons/hi2";
 import { GoSearch } from "react-icons/go";
-import { useTranslation } from "react-i18next"; 
+import { useTranslation } from "react-i18next";
 import pokedexLogo from "../../assets/pokedex-logo.webp";
 import pokemonHero from "../../assets/pokemon-hero.webp";
 import pokemonHeroNight from "../../assets/pokemon-hero-night.png";
@@ -11,8 +11,8 @@ import style from "../Header/Header.module.css";
 
 import ModalLogin from "../ModalLogin/ModalLogin";
 
-export default function Header() {
-  const { t, i18n } = useTranslation(); 
+export default function Header({ searchQuery, setSearchQuery }) {
+  const { t, i18n } = useTranslation();
   const [theme, setTheme] = useState("day");
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,9 +20,8 @@ export default function Header() {
 
   const [isLangOpen, setIsLangOpen] = useState(false);
 
-
   const [currentLang, setCurrentLang] = useState(
-    i18n.language ? i18n.language.toUpperCase() : "UA"
+    i18n.language ? i18n.language.toUpperCase() : "UA",
   );
 
   const langDropdownRef = useRef(null);
@@ -53,7 +52,6 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [langDropdownRef]);
 
- 
   const handleSelectLang = (langCode, langKey) => {
     setCurrentLang(langCode);
     setIsLangOpen(false);
@@ -93,7 +91,7 @@ export default function Header() {
                 {t("home")}
               </NavLink>
               <NavLink
-                to="/Catalog"
+                to="/catalog"
                 className={({ isActive }) =>
                   isActive ? `${style.navLink} ${style.active}` : style.navLink
                 }
@@ -101,7 +99,7 @@ export default function Header() {
                 {t("catalog")}
               </NavLink>
               <NavLink
-                to="/Favorite"
+                to="/favorite"
                 className={({ isActive }) =>
                   isActive ? `${style.navLink} ${style.active}` : style.navLink
                 }
@@ -202,6 +200,10 @@ export default function Header() {
                   type="text"
                   placeholder={t("searchPlaceholder")}
                   className={style.searchBar__input}
+                  value={searchQuery || ""}
+                  onChange={(e) =>
+                    setSearchQuery && setSearchQuery(e.target.value)
+                  }
                 />
               </div>
 
