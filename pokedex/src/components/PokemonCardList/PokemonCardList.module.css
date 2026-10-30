@@ -1,5 +1,5 @@
 
-.list {
+/* .list {
   width: 100%;
   padding: 16px 0;
 }
@@ -12,6 +12,44 @@
 }
 
 
+@media screen and (min-width: 1024px) {
+  .list {
+    padding: 24px 0;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+} */
+
+.list {
+  width: 100%;
+  padding: 16px 0;
+  transition: background-color 0.3s ease;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+/* ==========================================
+   ТЕМНА ТЕМА (Dark Theme)
+   ========================================== */
+
+:global(.dark) .list,
+[data-theme="night"] .list {
+  background-color: #0f172a; /* Глибокий темний фон для всього списку */
+}
+
+/* За потреби можна додати стилі безпосередньо для сітки або її елементів у темній темі */
+
+
+/* Медіа-запити для великих екранів */
 @media screen and (min-width: 1024px) {
   .list {
     padding: 24px 0;

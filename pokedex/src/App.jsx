@@ -14,6 +14,9 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(true);
 
+
+  const [theme, setTheme] = useState("day");
+
   useEffect(() => {
     getPokemons(20, 0)
       .then((data) => {
@@ -26,9 +29,28 @@ export default function App() {
       });
   }, []);
 
+
+  useEffect(() => {
+    if (theme === "night") {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "day" ? "night" : "day"));
+  };
+
   return (
-    <>
-      <Header searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+    <div className={theme === "night" ? "appNight" : "appDay"}>
+   
+      <Header
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        theme={theme}
+        toggleTheme={toggleTheme}
+      />
 
       <Routes>
         <Route
@@ -55,6 +77,6 @@ export default function App() {
 
         <Route path="/favorite" element={<Favorite />} />
       </Routes>
-    </>
+    </div>
   );
 }

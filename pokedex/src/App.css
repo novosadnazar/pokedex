@@ -1,1 +1,14 @@
 
+body {
+  background-color: #f8fafc; 
+  color: #0f172a;
+  margin: 0;
+  font-family: 'Inter', 'Poppins', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+body.dark {
+  background-color: #0f172a; 
+  color: #f8fafc;
+}

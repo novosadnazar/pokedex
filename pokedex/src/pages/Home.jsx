@@ -12,8 +12,6 @@ export default function Home({ pokemons, searchQuery, loading }) {
   return (
     <main>
       <div className="container">
-        <h1>Головна сторінка</h1>
-
         {filteredPokemons.length > 0 ? (
           <PokemonCardList 
             pokemons={filteredPokemons}
