@@ -1,0 +1,178 @@
+
+.cardContainer {
+  width: 100%;
+  padding: 0;
+  margin-bottom: 12px;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-family: 'Inter', 'Poppins', sans-serif;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.weatherHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.cityName {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #171717;
+  margin: 0;
+}
+
+.country {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #737373;
+}
+
+.weatherIconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  margin-bottom: 12px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+}
+
+.weatherIcon {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+}
+
+.typesSection {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.typeBadge {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: capitalize;
+  color: #ffffff;
+  background-color: #3882F6;
+}
+
+.weatherFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.controlBtn {
+  background: #f0f2f5;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.controlBtn:hover {
+  background: #e4e7eb;
+}
+
+.heartIcon {
+  color: #ef4444;
+  font-size: 16px;
+}
+
+.deleteIcon {
+  color: #737373;
+  font-size: 16px;
+}
+
+.deleteIcon:hover {
+  color: #ef4444;
+}
+
+.btnSeeMore {
+  flex-grow: 1;
+  background-color: #3882F6;
+  color: #ffffff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-align: center;
+}
+
+.btnSeeMore:hover {
+  background-color: #2563eb;
+}
+
+
+@media screen and (min-width: 1024px) {
+  .card {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .cityName {
+    font-size: 18px;
+  }
+
+  .country {
+    font-size: 15px;
+  }
+
+  .weatherIconWrapper {
+    height: 140px;
+  }
+
+  .weatherIcon {
+    width: 110px;
+    height: 110px;
+  }
+
+  .typeBadge {
+    font-size: 12px;
+    padding: 5px 12px;
+  }
+
+  .controlBtn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .btnSeeMore {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}

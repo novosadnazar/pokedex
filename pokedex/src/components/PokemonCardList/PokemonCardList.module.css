@@ -1,0 +1,25 @@
+
+.list {
+  width: 100%;
+  padding: 16px 0;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+
+@media screen and (min-width: 1024px) {
+  .list {
+    padding: 24px 0;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
