@@ -6,14 +6,17 @@ import { FaMoon, FaSun, FaUser } from "react-icons/fa";
 import { HiLanguage } from "react-icons/hi2";
 import { GoSearch } from "react-icons/go";
 import { useTranslation } from "react-i18next";
+// import pokedexLogo from "../assets/pokedex-logo.webp";
+// import pokemonHero from "../assets/pokemon-hero.webp";
+// import logoSvg from "../assets/icons.svg"
 import pokedexLogo from "../../assets/pokedex-logo.webp";
 import pokemonHero from "../../assets/pokemon-hero.webp";
-import logoSvg from "../../assets/icons.svg"
-
+import logoSvg from "../../assets/icons.svg";
 import pokemonHeroNight from "../../assets/pokemon-hero-night.png";
+// import pokemonHeroNight from "../assets/pokemon-hero-night.png";
 import style from "../Header/Header.module.css";
 
-import ModalLogin from "../ModalLogin/ModalLogin";
+// import ModalLogin from "../ModalLogin/ModalLogin";
 
 export default function Header({
   searchQuery,

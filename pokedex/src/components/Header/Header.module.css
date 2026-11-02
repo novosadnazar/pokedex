@@ -14,11 +14,11 @@
 }
 
 .HeaderDay {
-  background-image: url("../assets/hero-fon-day-theme.jpeg");
+  background-image: url("../../assets/hero-fon-day-theme.webp");
 }
 
 .HeaderNight {
-  background-image: url("../assets/hero-fon-night-theme.jpeg");
+  background-image: url("../../assets/hero-fon-night-theme.webp");
 }
 
 .header__top {
