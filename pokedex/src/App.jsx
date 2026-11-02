@@ -29,7 +29,7 @@ export default function App() {
       });
   }, []);
 
-
+  // 2. Додаємо/знімаємо клас dark на body при зміні теми
   useEffect(() => {
     if (theme === "night") {
       document.body.classList.add("dark");
@@ -44,7 +44,7 @@ export default function App() {
 
   return (
     <div className={theme === "night" ? "appNight" : "appDay"}>
-   
+      {/* Передаємо theme та toggleTheme у Header */}
       <Header
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
