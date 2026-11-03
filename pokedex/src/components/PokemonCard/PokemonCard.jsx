@@ -1,11 +1,18 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { FiHeart, FiTrash2 } from "react-icons/fi";
 import style from "./PokemonCard.module.css";
 
-function PokemonCard({ pokemon, onSelect, onFavorite, onDelete }) {
+function PokemonCard({ pokemon, onFavorite, onDelete }) {
+  const navigate = useNavigate();
+
+  const handleSelect = () => {
+    navigate(`/pokemon/${pokemon.id}`);
+  };
+
   return (
     <div className={`container ${style.cardContainer}`}>
-      <article className={style.card} onClick={() => onSelect(pokemon)}>
+      <article className={style.card} onClick={handleSelect}>
         <div className={style.weatherHeader}>
           <h3 className={style.cityName}>
             {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
@@ -50,7 +57,7 @@ function PokemonCard({ pokemon, onSelect, onFavorite, onDelete }) {
           <button
             type="button"
             className={style.btnSeeMore}
-            onClick={() => onSelect(pokemon)}
+            onClick={handleSelect}
           >
             See more
           </button>

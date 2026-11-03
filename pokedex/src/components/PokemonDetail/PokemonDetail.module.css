@@ -1,0 +1,276 @@
+.detailContainer {
+  padding: 30px 0 60px;
+  font-family: 'Inter', 'Poppins', sans-serif;
+}
+
+.loading {
+  text-align: center;
+  padding: 60px;
+  font-size: 18px;
+  color: #64748b;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0f172a;
+  cursor: pointer;
+  margin-bottom: 24px;
+  transition: opacity 0.2s;
+}
+
+.backButton:hover {
+  opacity: 0.7;
+}
+
+.detailCard {
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 24px;
+}
+
+.imageSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imageWrapper {
+  width: 100%;
+  max-width: 320px;
+  height: 300px;
+  background: radial-gradient(circle, #f8fafc 0%, #edf2f7 100%);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.pokemonImg {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+}
+
+.descriptionText {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 24px;
+  padding: 0 10px;
+}
+
+.favoriteMainBtn {
+  width: 100%;
+  max-width: 320px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: #ffffff;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+  transition: transform 0.2s;
+}
+
+.favoriteMainBtn:hover {
+  transform: translateY(-2px);
+}
+
+.infoSection {
+  flex: 1;
+}
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.pokemonName {
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.pokemonId {
+  font-size: 18px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.typesRow {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.typeBadge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 20px;
+  text-transform: capitalize;
+  color: #ffffff;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.physicalStats {
+  display: flex;
+  align-items: center;
+  background: #f8fafc;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 24px;
+  border: 1px solid #e2e8f0;
+}
+
+.statBox {
+  flex: 1;
+  text-align: center;
+}
+
+.statLabel {
+  display: block;
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.statValue {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.statDivider {
+  width: 1px;
+  height: 30px;
+  background: #cbd5e1;
+}
+
+.statsTitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 16px;
+}
+
+.statsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.statBarRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.statName {
+  width: 75px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.progressBarBg {
+  flex: 1;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background: #ff7f00;
+  border-radius: 4px;
+}
+
+.statNumber {
+  width: 30px;
+  text-align: right;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* Dark Theme */
+:global(.dark) .detailCard {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.detailCard {
+  transition: background-color 0.3s;
+}
+
+:global(.dark) .backButton {
+  color: #f8fafc;
+}
+
+:global(.dark) .imageWrapper {
+  background: radial-gradient(circle, #334155 0%, #0f172a 100%);
+}
+
+:global(.dark) .descriptionText,
+:global(.dark) .statLabel,
+:global(.dark) .statName {
+  color: #94a3b8;
+}
+
+:global(.dark) .pokemonName,
+:global(.dark) .statValue,
+:global(.dark) .statsTitle,
+:global(.dark) .statNumber {
+  color: #f8fafc;
+}
+
+:global(.dark) .physicalStats {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+:global(.dark) .statDivider {
+  background: #334155;
+}
+
+:global(.dark) .progressBarBg {
+  background: #334155;
+}
+
+@media screen and (min-width: 1024px) {
+  .detailCard {
+    flex-direction: row;
+    padding: 40px;
+    gap: 50px;
+  }
+  .imageSection {
+    max-width: 380px;
+  }
+}

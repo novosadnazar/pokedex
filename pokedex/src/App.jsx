@@ -1,10 +1,14 @@
+
+
 import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 import Home from "./pages/Home";
 import Catalog from "./pages/Catalog";
 import Favorite from "./pages/Favorite";
+import PokemonDetail from "./components/PokemonDetail/PokemonDetail";
 import { getPokemons } from "./services/pokeApi";
 
 import "./App.css";
@@ -13,12 +17,12 @@ export default function App() {
   const [pokemons, setPokemons] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(true);
-
-
+  const [visibleCount, setVisibleCount] = useState(6); 
   const [theme, setTheme] = useState("day");
 
   useEffect(() => {
-    getPokemons(20, 0)
+  
+    getPokemons(30, 0)
       .then((data) => {
         setPokemons(data);
         setLoading(false);
@@ -29,7 +33,6 @@ export default function App() {
       });
   }, []);
 
-  // 2. Додаємо/знімаємо клас dark на body при зміні теми
   useEffect(() => {
     if (theme === "night") {
       document.body.classList.add("dark");
@@ -42,9 +45,15 @@ export default function App() {
     setTheme((prevTheme) => (prevTheme === "day" ? "night" : "day"));
   };
 
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => prev + 3); 
+  };
+
+  const visiblePokemons = pokemons.slice(0, visibleCount);
+  const hasMore = visibleCount < pokemons.length;
+
   return (
     <div className={theme === "night" ? "appNight" : "appDay"}>
-      {/* Передаємо theme та toggleTheme у Header */}
       <Header
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
@@ -57,9 +66,11 @@ export default function App() {
           path="/"
           element={
             <Home
-              pokemons={pokemons}
+              pokemons={visiblePokemons}
               searchQuery={searchQuery}
               loading={loading}
+              onLoadMore={handleLoadMore}
+              hasMore={hasMore}
             />
           }
         />
@@ -68,15 +79,21 @@ export default function App() {
           path="/catalog"
           element={
             <Catalog
-              pokemons={pokemons}
+              pokemons={visiblePokemons}
               searchQuery={searchQuery}
               loading={loading}
+              onLoadMore={handleLoadMore}
+              hasMore={hasMore}
             />
           }
         />
 
+        <Route path="/pokemon/:id" element={<PokemonDetail />} />
+
         <Route path="/favorite" element={<Favorite />} />
       </Routes>
+
+      <Footer theme={theme} />
     </div>
   );
 }

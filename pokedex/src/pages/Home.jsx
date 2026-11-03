@@ -1,27 +1,32 @@
 
 import PokemonCardList from "../components/PokemonCardList/PokemonCardList";
 
-export default function Home({ pokemons, searchQuery, loading }) {
-  if (loading) return <p>Завантаження покемонів...</p>;
-
-
-  const filteredPokemons = pokemons.filter((poke) =>
-    poke.name.toLowerCase().includes(searchQuery.toLowerCase())
+export default function Home({
+  pokemons,
+  searchQuery,
+  loading,
+  onLoadMore,
+  hasMore,
+}) {
+  const filteredPokemons = pokemons.filter((p) =>
+    p.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  return (
-    <main>
-      <div className="container">
-        {filteredPokemons.length > 0 ? (
-          <PokemonCardList 
-            pokemons={filteredPokemons}
-            onSelect={(pokemon) => console.log("Обрано покемона:", pokemon)}
-            onFavorite={(id) => console.log("Додано в улюблені:", id)}
-          />
-        ) : (
-          <p>Нічого не знайдено за вашим запитом</p>
-        )}
+  if (loading) {
+    return (
+      <div style={{ textAlign: "center", padding: "50px" }}>
+        Завантаження...
       </div>
-    </main>
+    );
+  }
+
+  return (
+    <div className="container">
+      <PokemonCardList
+        pokemons={filteredPokemons}
+        onLoadMore={onLoadMore}
+        hasMore={hasMore && !searchQuery}
+      />
+    </div>
   );
 }

@@ -6,7 +6,7 @@ import style from "./ModalLogin.module.css";
 const rootModal = document.querySelector("#root-modal");
 
 export default function ModalLogin({ onToggle, setUsername }) {
-  const { t } = useTranslation(); // 
+  const { t } = useTranslation(); 
   const [userNameInput, setUserNameInput] = useState("");
 
   useEffect(() => {
