@@ -12,3 +12,15 @@ body.dark {
   background-color: #0f172a; 
   color: #f8fafc;
 }
+
+.favorite-page{
+      width: 100%;
+  padding: 16px 0;
+
+}
+
+.favorite-title{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 25px;
+}

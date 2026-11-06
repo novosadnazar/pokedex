@@ -1,32 +1,10 @@
 
-import PokemonCardList from "../components/PokemonCardList/PokemonCardList";
 
-export default function Home({
-  pokemons,
-  searchQuery,
-  loading,
-  onLoadMore,
-  hasMore,
-}) {
-  const filteredPokemons = pokemons.filter((p) =>
-    p.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
 
-  if (loading) {
-    return (
-      <div style={{ textAlign: "center", padding: "50px" }}>
-        Завантаження...
-      </div>
-    );
-  }
-
+export default function Home() {
   return (
     <div className="container">
-      <PokemonCardList
-        pokemons={filteredPokemons}
-        onLoadMore={onLoadMore}
-        hasMore={hasMore && !searchQuery}
-      />
+      <h1>В розробці</h1>
     </div>
   );
 }

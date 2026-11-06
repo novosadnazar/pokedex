@@ -1,30 +1,8 @@
 
-// import PokemonCard from "../PokemonCard/PokemonCard";
-// import style from "./PokemonCardList.module.css";
 
-// const PokemonCardList = ({ pokemons, onSelect, onFavorite, onDelete }) => {
-//   return (
-//     <section className={style.list}>
-//       <div className={style.grid}>
-//         {pokemons.map((pokemon) => (
-//           <PokemonCard
-//             key={pokemon.id}
-//             pokemon={pokemon}
-//             onSelect={onSelect}
-//             onFavorite={onFavorite}
-//             onDelete={onDelete}
-//           />
-//         ))}
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default PokemonCardList;
-
-import PokemonCard from "../PokemonCard/PokemonCard";
+import  PokemonCard  from "../PokemonCard/PokemonCard";
 import style from "./PokemonCardList.module.css";
-
+import { useTranslation } from "react-i18next";
 const PokemonCardList = ({
   pokemons,
   onFavorite,
@@ -32,6 +10,8 @@ const PokemonCardList = ({
   onLoadMore,
   hasMore,
 }) => {
+
+  const {t}= useTranslation()
   return (
     <section className={style.list}>
       <div className={style.grid}>
@@ -52,7 +32,7 @@ const PokemonCardList = ({
             className={style.loadMoreBtn}
             onClick={onLoadMore}
           >
-            Завантажити ще
+            {t("loadBtn")}
           </button>
         </div>
       )}

@@ -1,13 +1,46 @@
-import React from "react";
+
+import { useTranslation } from "react-i18next";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiHeart, FiTrash2 } from "react-icons/fi";
 import style from "./PokemonCard.module.css";
 
 function PokemonCard({ pokemon, onFavorite, onDelete }) {
   const navigate = useNavigate();
+  const [isFavorite, setIsFavorite] = useState(false);
+ const { t } = useTranslation();
+
+  useEffect(() => {
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    const exists = favorites.some((fav) => fav.id === pokemon.id);
+    setIsFavorite(exists);
+  }, [pokemon.id]);
 
   const handleSelect = () => {
     navigate(`/pokemon/${pokemon.id}`);
+  };
+
+
+  const handleFavoriteClick = (evt) => {
+    evt.stopPropagation();
+
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    if (isFavorite) {
+     
+      favorites = favorites.filter((fav) => fav.id !== pokemon.id);
+      setIsFavorite(false);
+    } else {
+     
+      favorites.push(pokemon);
+      setIsFavorite(true);
+    }
+
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+
+    if (onFavorite) {
+      onFavorite(pokemon.id);
+    }
   };
 
   return (
@@ -47,11 +80,16 @@ function PokemonCard({ pokemon, onFavorite, onDelete }) {
         >
           <button
             type="button"
-            className={style.controlBtn}
-            onClick={() => onFavorite && onFavorite(pokemon.id)}
-            title="Add to favorites"
+            className={`${style.controlBtn} ${
+              isFavorite ? style.favoriteActive : ""
+            }`}
+            onClick={handleFavoriteClick}
+            title={isFavorite ? "Remove from favorites" : "Add to favorites"}
           >
-            <FiHeart className={style.heartIcon} />
+            <FiHeart
+              className={style.heartIcon}
+              style={isFavorite ? { fill: "#ef4444", color: "#ef4444" } : {}}
+            />
           </button>
 
           <button
@@ -59,14 +97,17 @@ function PokemonCard({ pokemon, onFavorite, onDelete }) {
             className={style.btnSeeMore}
             onClick={handleSelect}
           >
-            See more
+            {t("seeBtn")}
           </button>
 
           {onDelete && (
             <button
               type="button"
               className={style.controlBtn}
-              onClick={() => onDelete(pokemon.id)}
+              onClick={(e) => {
+                e.stopPropagation();
+                onDelete(pokemon.id);
+              }}
               title="Delete pokemon"
             >
               <FiTrash2 className={style.deleteIcon} />

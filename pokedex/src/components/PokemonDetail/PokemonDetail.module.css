@@ -1,3 +1,5 @@
+
+
 .detailContainer {
   padding: 30px 0 60px;
   font-family: 'Inter', 'Poppins', sans-serif;
@@ -38,6 +40,7 @@
   flex-direction: column;
   gap: 30px;
   padding: 24px;
+  transition: background-color 0.3s;
 }
 
 .imageSection {
@@ -73,14 +76,17 @@
   padding: 0 10px;
 }
 
+
+
 .favoriteMainBtn {
   width: 100%;
   max-width: 320px;
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
   color: #ffffff;
   border: none;
-  padding: 14px 20px;
-  border-radius: 14px;
+  padding: 15px 22px;
+  border-radius: 16px;
+  font-family: 'Inter', 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 15px;
   display: flex;
@@ -88,13 +94,64 @@
   justify-content: center;
   gap: 10px;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
-  transition: transform 0.2s;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.35);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+
+.favoriteMainBtn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.favoriteMainBtn:hover::after {
+  left: 100%;
 }
 
 .favoriteMainBtn:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(59, 130, 246, 0.5);
 }
+
+.favoriteMainBtn:active {
+  transform: translateY(-1px);
+}
+
+
+.favoriteMainBtn svg {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.favoriteMainBtn:hover svg {
+  transform: scale(1.2);
+}
+
+
+.favoriteMainBtn.favoriteActiveBtn {
+  background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+  box-shadow: 0 8px 20px rgba(244, 63, 94, 0.4);
+}
+
+.favoriteMainBtn.favoriteActiveBtn:hover {
+  background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+  box-shadow: 0 12px 25px rgba(244, 63, 94, 0.6);
+}
+
+
 
 .infoSection {
   flex: 1;
@@ -185,7 +242,7 @@
   gap: 12px;
 }
 
-.statBarRow {
+.statRow {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -220,14 +277,11 @@
   color: #0f172a;
 }
 
-/* Dark Theme */
+
+
 :global(.dark) .detailCard {
   background: #1e293b;
   border-color: #334155;
-}
-
-.detailCard {
-  transition: background-color 0.3s;
 }
 
 :global(.dark) .backButton {
@@ -263,6 +317,7 @@
 :global(.dark) .progressBarBg {
   background: #334155;
 }
+
 
 @media screen and (min-width: 1024px) {
   .detailCard {

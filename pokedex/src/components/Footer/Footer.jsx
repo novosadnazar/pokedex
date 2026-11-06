@@ -71,7 +71,7 @@ export default function Footer({ theme }) {
           </div>
 
           <div className={style.footer__section}>
-            <h4 className={style.footer__title}>Навігація</h4>
+                      <h4 className={style.footer__title}>{t("navigate") }</h4>
             <ul className={style.footer__list}>
               <li>
                 <NavLink to="/" className={style.footer__link}>
@@ -92,7 +92,7 @@ export default function Footer({ theme }) {
           </div>
 
           <div className={style.footer__section}>
-            <h4 className={style.footer__title}>Типи</h4>
+                      <h4 className={style.footer__title}>{t("type") }</h4>
             <ul className={style.footer__list}>
               <li>
                 <NavLink
@@ -127,7 +127,7 @@ export default function Footer({ theme }) {
           </div>
 
           <div className={style.footer__section}>
-            <h4 className={style.footer__title}>Зв'язатися</h4>
+                      <h4 className={style.footer__title}>{t("contact") }</h4>
             <ul className={style.footer__contacts}>
               <li>
                 <FaEnvelope className={style.contactIcon} />
