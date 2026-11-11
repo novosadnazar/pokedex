@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import Catalog from "./pages/Catalog";
 import Favorite from "./pages/Favorite";
 import PokemonDetail from "./components/PokemonDetail/PokemonDetail";
+
 import { getPokemons } from "./services/pokeApi";
 
 import "./App.css";
@@ -92,7 +93,6 @@ export default function App() {
 
         <Route path="/favorite" element={<Favorite />} />
       </Routes>
-
       <Footer theme={theme} />
     </div>
   );

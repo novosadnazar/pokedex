@@ -1,10 +1,11 @@
+import React from "react";
 
-
+import CatchPokemonGame from "../components/CatchPokemonGame/CatchPokemonGame";
 
 export default function Home() {
   return (
     <div className="container">
-      <h1>В розробці</h1>
+      <CatchPokemonGame />
     </div>
   );
 }
