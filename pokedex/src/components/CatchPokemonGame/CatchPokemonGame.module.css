@@ -1,6 +1,6 @@
 .gameContainer {
   width: 100%;
-  max-width: 520px; /* Компактніше на мобільних */
+  max-width: 520px; 
   margin: 30px auto;
   padding: 20px 24px;
   background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
@@ -14,7 +14,7 @@
   box-sizing: border-box;
 }
 
-/* Декоративний світінний фоновий акцент */
+
 .gameContainer::before {
   content: '';
   position: absolute;
@@ -39,7 +39,7 @@
   z-index: 1;
 }
 
-/* Панель статистики */
+
 .statsBar {
   display: flex;
   justify-content: space-around;
@@ -73,7 +73,7 @@
 .iconTime { color: #3b82f6; font-size: 15px; }
 .iconTrophy { color: #ef4444; font-size: 15px; }
 
-/* Ігрове поле (Сітка 3х3) - робимо більш сплющеною/широкою */
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -84,7 +84,7 @@
 }
 
 .hole {
-  /* Змінюємо співвідношення сторін: лунка стає нижчою (ширшою за висоту) */
+  
   aspect-ratio: 1.3 / 1; 
   background: radial-gradient(circle, #f1f5f9 0%, #e2e8f0 100%);
   border-radius: 16px;
@@ -102,7 +102,7 @@
   transform: scale(0.95);
 }
 
-/* Імітація землі / нори (нижча по висоті) */
+
 .dirt {
   position: absolute;
   bottom: 0;
@@ -115,7 +115,7 @@
   box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Анімація появи покемона */
+
 .pokemon {
   position: absolute;
   bottom: 10%;
@@ -140,7 +140,7 @@
   }
 }
 
-/* Кнопки керування */
+
 .controls {
   display: flex;
   justify-content: center;
@@ -193,13 +193,11 @@
 }
 
 
-/* ==============================
-   ДЕСКТОПНА ВЕРСІЯ (ШИРША І КОМПАКТНА ПО ВИСОТІ)
-   ============================== */
+
 
 @media screen and (min-width: 1024px) {
   .gameContainer {
-    max-width: 760px; /* Суттєво ширша зона для ПК */
+    max-width: 760px; 
     padding: 28px 36px;
     border-radius: 28px;
   }
@@ -234,7 +232,7 @@
   }
 
   .hole {
-    aspect-ratio: 1.4 / 1; /* Робить лунки ще більш широкими і приземистими на десктопі */
+    aspect-ratio: 1.4 / 1; 
     border-radius: 20px;
   }
 
@@ -246,9 +244,6 @@
 }
 
 
-/* ==============================
-   ТЕМНА ТЕМА (DARK THEME)
-   ============================== */
 
 :global(.dark) .gameContainer {
   background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);

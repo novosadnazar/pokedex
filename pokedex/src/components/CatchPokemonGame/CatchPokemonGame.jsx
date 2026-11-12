@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { FiPlay, FiRotateCcw, FiAward, FiClock, FiStar } from "react-icons/fi";
 import styles from "./CatchPokemonGame.module.css";
 
-// Використовуємо спрайти Diglett та Dugtrio з PokeAPI
+
 const DIGLETT_IMG =
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/50.png";
 const DUGTRIO_IMG =
@@ -18,7 +18,7 @@ export const CatchPokemonGame = () => {
   const timerRef = useRef(null);
   const moleTimerRef = useRef(null);
 
-  // Завантаження рекорду з localStorage при монтуванні
+ 
   useEffect(() => {
     const savedHighScore = localStorage.getItem("pokemon_mole_highscore");
     if (savedHighScore) {
@@ -26,7 +26,7 @@ export const CatchPokemonGame = () => {
     }
   }, []);
 
-  // Таймер зворотного відліку (60 секунд)
+ 
   useEffect(() => {
     if (isPlaying && timeLeft > 0) {
       timerRef.current = setInterval(() => {
@@ -39,7 +39,7 @@ export const CatchPokemonGame = () => {
     return () => clearInterval(timerRef.current);
   }, [isPlaying, timeLeft]);
 
-  // Генерація появи покемонів із поступовим ускладненням
+  
   useEffect(() => {
     if (!isPlaying) return;
 
@@ -120,7 +120,7 @@ export const CatchPokemonGame = () => {
     <div className={styles.gameContainer}>
       <h2 className={styles.title}>Спіймай Діглета! 🐹⚡</h2>
 
-      {/* Панель статистики */}
+
       <div className={styles.statsBar}>
         <div className={styles.statBox}>
           <FiStar className={styles.iconScore} />
@@ -135,14 +135,14 @@ export const CatchPokemonGame = () => {
           </span>
         </div>
         <div className={styles.statBox}>
-          <FiAward className={styles.iconTrophy} /> {/* Змінено на FiAward */}
+          <FiAward className={styles.iconTrophy} /> 
           <span>
             Рекорд: <strong>{highScore}</strong>
           </span>
         </div>
       </div>
 
-      {/* Ігрове поле (Сітка 3х3) */}
+      
       <div className={styles.grid}>
         {activeHoles.map((pokeType, index) => (
           <div
@@ -164,7 +164,7 @@ export const CatchPokemonGame = () => {
         ))}
       </div>
 
-      {/* Кнопка запуску / Перезапуску */}
+ 
       <div className={styles.controls}>
         {!isPlaying ? (
           <button className={styles.startBtn} onClick={startGame}>
