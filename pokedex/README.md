@@ -1,16 +1,40 @@
-# React + Vite
+# ⚡ PokéDex App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Сучасний веб-додаток "Покедекс", створений за допомогою React, Vite. Дозволяє зручно шукати покемонів, переглядати їх детальні характеристики, додавати улюблені до обраного та грати у міні-гру.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Основні можливості
 
-## React Compiler
+- **Каталог покемонів:** Зручний перегляд списку з пагінацією або нескінченним скролом.
+- **Швидкий пошук та фільтрація:** Пошук покемонів за назвою в реальному часі.
+- **Сторінка детальної інформації:** Перегляд статистики, здібностей та типів конкретного покемона.
+- **Обране:** Можливість додавати/видаляти покемонів до списку улюблених (збереження через `localStorage`).
+- **Мультивалютність / Локалізація:** Підтримка кількох мов (i18n).
+- **Інтерактивна міні-гра:** Міні-гра "Catch Pokemon" прямо всередині додатку.
+- **Адаптивний дизайн:** Зручно користуватися як з комп'ютера, так і з мобільних пристроїв.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠 Використані технології
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **Frontend:** React 19, Vite, JavaScript (ES6+)
+* **Стилізація:**  CSS Modules
+* **Менеджмент стану:** React API
+* **API:** PokéAPI (`https://pokeapi.co/`)
+* **Зберігання даних:** LocalStorage
+
+---
+
+## 📁 Структура проєкту
+
+```text
+src/
+│
+├── assets/          # Зібрані зображення, логотипи та іконки (SVG/PNG)
+├── components/      # Реузульвані компоненти (Header, Footer, PokemonCard, ModalLogin тощо)
+├── pages/           # Сторінки додатку (Home, Catalog, Favorite)
+├── services/        # Робота з API (pokeApi.js)
+├── i18n.js          # Налаштування локалізації/перекладів
+├── App.jsx          # Головний компонент маршрутизації
+└── main.css / index.css # Глобальні стилі
