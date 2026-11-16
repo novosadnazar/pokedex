@@ -3,7 +3,6 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
-
 const resources = {
   ua: {
     translation: {
@@ -34,6 +33,15 @@ const resources = {
       height: "Зріст",
       weight: "Вага",
       baseX: "Базові характеристики",
+      // Переклади для гри CatchPokemonGame
+      gameTitle: "Спіймай Діглета!",
+      gameScore: "Рахунок:",
+      gameTime: "Час:",
+      gameSeconds: "с",
+      gameHighScore: "Рекорд:",
+      gamePlayAgain: "Зіграти знову",
+      gameStart: "Почати гру",
+      gameFinish: "Завершити",
     },
   },
   en: {
@@ -65,16 +73,25 @@ const resources = {
       height: "Height",
       weight: "weight",
       baseX: "Basic characteristics",
+      // Переклади для гри CatchPokemonGame
+      gameTitle: "Catch Diglett!",
+      gameScore: "Score:",
+      gameTime: "Time:",
+      gameSeconds: "s",
+      gameHighScore: "High Score:",
+      gamePlayAgain: "Play Again",
+      gameStart: "Start Game",
+      gameFinish: "Finish",
     },
   },
 };
 
 i18n
-  .use(LanguageDetector) 
+  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources,
-    fallbackLng: "ua", 
+    fallbackLng: "ua",
     debug: false,
     interpolation: {
       escapeValue: false,

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import { FiPlay, FiRotateCcw, FiAward, FiClock, FiStar } from "react-icons/fi";
-import styles from "./CatchPokemonGame.module.css";
-
+import { useTranslation } from "react-i18next";
+import { FiStar, FiClock, FiAward, FiPlay, FiRotateCcw } from "react-icons/fi";
+import styles from "./CatchPokemonGame.module.css"; 
 
 const DIGLETT_IMG =
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/50.png";
@@ -9,6 +9,8 @@ const DUGTRIO_IMG =
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/51.png";
 
 export const CatchPokemonGame = () => {
+  const { t } = useTranslation();
+
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(60);
@@ -18,7 +20,6 @@ export const CatchPokemonGame = () => {
   const timerRef = useRef(null);
   const moleTimerRef = useRef(null);
 
- 
   useEffect(() => {
     const savedHighScore = localStorage.getItem("pokemon_mole_highscore");
     if (savedHighScore) {
@@ -26,7 +27,6 @@ export const CatchPokemonGame = () => {
     }
   }, []);
 
- 
   useEffect(() => {
     if (isPlaying && timeLeft > 0) {
       timerRef.current = setInterval(() => {
@@ -39,7 +39,6 @@ export const CatchPokemonGame = () => {
     return () => clearInterval(timerRef.current);
   }, [isPlaying, timeLeft]);
 
-  
   useEffect(() => {
     if (!isPlaying) return;
 
@@ -118,31 +117,33 @@ export const CatchPokemonGame = () => {
 
   return (
     <div className={styles.gameContainer}>
-      <h2 className={styles.title}>Спіймай Діглета! 🐹⚡</h2>
-
+      <h2 className={styles.title}>{t("gameTitle")} 🐹⚡</h2>
 
       <div className={styles.statsBar}>
         <div className={styles.statBox}>
           <FiStar className={styles.iconScore} />
           <span>
-            Рахунок: <strong>{score}</strong>
+            {t("gameScore")} <strong>{score}</strong>
           </span>
         </div>
         <div className={styles.statBox}>
           <FiClock className={styles.iconTime} />
           <span>
-            Час: <strong>{timeLeft}с</strong>
+            {t("gameTime")}{" "}
+            <strong>
+              {timeLeft}
+              {t("gameSeconds")}
+            </strong>
           </span>
         </div>
         <div className={styles.statBox}>
-          <FiAward className={styles.iconTrophy} /> 
+          <FiAward className={styles.iconTrophy} />
           <span>
-            Рекорд: <strong>{highScore}</strong>
+            {t("gameHighScore")} <strong>{highScore}</strong>
           </span>
         </div>
       </div>
 
-      
       <div className={styles.grid}>
         {activeHoles.map((pokeType, index) => (
           <div
@@ -164,15 +165,14 @@ export const CatchPokemonGame = () => {
         ))}
       </div>
 
- 
       <div className={styles.controls}>
         {!isPlaying ? (
           <button className={styles.startBtn} onClick={startGame}>
-            <FiPlay /> {timeLeft === 0 ? "Зіграти знову" : "Почати гру"}
+            <FiPlay /> {timeLeft === 0 ? t("gamePlayAgain") : t("gameStart")}
           </button>
         ) : (
           <button className={styles.resetBtn} onClick={endGame}>
-            <FiRotateCcw /> Завершити
+            <FiRotateCcw /> {t("gameFinish")}
           </button>
         )}
       </div>
